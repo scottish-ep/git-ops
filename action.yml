@@ -1,0 +1,36 @@
+# action.yml
+name: 'gitops action to update gitops template'
+description: 'update image in kustomize, commit change to git so cicd tool can pick up'
+inputs:
+  tag:
+    description: 'Tag version of docker'
+    required: true
+    default: 'default'
+  deployment-file:
+    description: 'Deployment directory of the repo'
+    required: true
+  image:
+    description: 'Image docker name'
+    required: true
+  token:
+    description: 'Token for managing github repo'
+    required: true
+  repo-url:
+    description: 'repo url'
+    required: true
+  match-pattern:
+    description: 'check pattern to replace'
+    required: true
+outputs:
+  digest:
+    description: 'just here for now'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.tag }}
+    - ${{ inputs.deployment-file }}
+    - ${{ inputs.image }}
+    - ${{ inputs.token }}
+    - ${{ inputs.repo-url }}
+    - ${{ inputs.match-pattern }}
