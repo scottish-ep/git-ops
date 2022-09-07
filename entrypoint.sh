@@ -21,6 +21,7 @@ ls -la
 sed "s/$MATCH_PATTERN/$TAG/g" $DEPLOYMENT_FILE
 sed -i "s/$MATCH_PATTERN/$TAG/g" $DEPLOYMENT_FILE
 
+git remote set-url origin $GIT_REPO_URL
 git config --global user.name "scottish-ep"
 git config --global user.email "scottish.foldep@gmail.com"
 git config --global color.ui true
