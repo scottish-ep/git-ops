@@ -9,9 +9,6 @@ inputs:
   deployment-file:
     description: 'Deployment directory of the repo'
     required: true
-  image:
-    description: 'Image docker name'
-    required: true
   token:
     description: 'Token for managing github repo'
     required: true
@@ -30,7 +27,6 @@ runs:
   args:
     - ${{ inputs.tag }}
     - ${{ inputs.deployment-file }}
-    - ${{ inputs.image }}
     - ${{ inputs.token }}
     - ${{ inputs.repo-url }}
     - ${{ inputs.match-pattern }}

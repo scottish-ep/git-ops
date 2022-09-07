@@ -2,14 +2,13 @@
 
 set -e
 
-GIT_TOKEN=$4
-GIT_REPO=$5
+GIT_TOKEN=$3
+GIT_REPO=$4
 
 TAG=$1
 DEPLOYMENT_FILE=$2
 
-IMAGE_REPO=$3
-MATCH_PATTERN=$6
+MATCH_PATTERN=$5
 
 GIT_REPO_URL="https://scottish-ep:$GIT_TOKEN@$GIT_REPO"
 
@@ -24,5 +23,5 @@ git config --global user.email "scottish.foldep@gmail.com"
 git config --global color.ui true
 
 git add $DEPLOYMENT_FILE
-git commit -m "[ci] Update $IMAGE_REPO to $TAG"
+git commit -m "[ci] Update to $TAG"
 git push origin main
