@@ -18,6 +18,9 @@ inputs:
   match-pattern:
     description: 'check pattern to replace'
     required: true
+  ops-dir:
+    description: 'ops folder'
+    required: true
 outputs:
   digest:
     description: 'just here for now'
@@ -30,3 +33,4 @@ runs:
     - ${{ inputs.token }}
     - ${{ inputs.repo-url }}
     - ${{ inputs.match-pattern }}
+    - ${{ inputs.ops-dir }}

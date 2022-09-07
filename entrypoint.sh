@@ -9,10 +9,13 @@ TAG=$1
 DEPLOYMENT_FILE=$2
 
 MATCH_PATTERN=$5
+OPS_DIR=$6
 
 GIT_REPO_URL="https://scottish-ep:$GIT_TOKEN@$GIT_REPO"
 
 git clone $GIT_REPO_URL
+
+cd $OPS_DIR
 
 ls -la
 sed "s/$MATCH_PATTERN/$TAG/g" $DEPLOYMENT_FILE
