@@ -19,8 +19,8 @@ ls -la
 sed "s/$MATCH_PATTERN/$TAG/g" $DEPLOYMENT_FILE
 sed -i "s/$MATCH_PATTERN/$TAG/g" $DEPLOYMENT_FILE
 
-git config --global user.name "pepepot"
-git config --global user.email "ops@eastplayers.io"
+git config --global user.name "scottish-ep"
+git config --global user.email "scottish.foldep@gmail.com"
 git config --global color.ui true
 
 git add $DEPLOYMENT_FILE
